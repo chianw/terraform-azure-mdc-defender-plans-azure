@@ -57,6 +57,7 @@ resource "azurerm_subscription_policy_assignment" "vm" {
   ]
 }
 
+/* comment out due to deprecation of Log Analytics Agent in Nov 24
 # Enabling vm extensions - Log Analytics for vm
 resource "azurerm_security_center_auto_provisioning" "auto_provisioning" {
   count = contains(var.mdc_plans_list, "VirtualMachines") ? 1 : 0
@@ -67,6 +68,7 @@ resource "azurerm_security_center_auto_provisioning" "auto_provisioning" {
     azurerm_security_center_subscription_pricing.asc_plans["VirtualMachines"]
   ]
 }
+*/
 
 # Enabling vm extensions - Endpoint protection
 resource "azurerm_security_center_setting" "setting_mcas" {
